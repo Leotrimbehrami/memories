@@ -1,21 +1,23 @@
+// App.js
 import React from "react";
-import { Container, AppBar, Typography, Grow, Grid} from '@mui/material'
+import { Container, Grow, Grid } from '@mui/material';
 
 import Posts from "./components/Posts/Posts";
 import Form from "./components/Form/Form";
-import memories from './components/images/memories.png'
+import memories from './components/images/memories.png';
+import { StyledAppBar, StyledTypography, StyledImage } from './styles';
 
 const App = () => {
   return (
     <Container maxWidth="lg">
-      <AppBar position="static" color="inherit">
-        <Typography variant="h2" align="center">Memories</Typography>
-        <img  src={memories} alt="memories" height="60" />
-      </AppBar>
+      <StyledAppBar position="static" color="inherit">
+        <StyledTypography variant="h2" align="center">Memories</StyledTypography>
+        <StyledImage src={memories} alt="memories" height="60" />
+      </StyledAppBar>
       <Grow in>
         <Container>
-          <Grid container justify="space-between" alignItems="stretch" spacing={3}>
-          <Grid item xs={12} sm={7}>
+          <Grid container justifyContent="space-between" alignItems="stretch" spacing={3}>
+            <Grid item xs={12} sm={7}>
               <Posts />
             </Grid>
             <Grid item xs={12} sm={4}>
@@ -25,7 +27,7 @@ const App = () => {
         </Container>
       </Grow>
     </Container>
-  )
-}
+  );
+};
 
-export default App
+export default App;

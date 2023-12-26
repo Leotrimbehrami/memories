@@ -1,6 +1,9 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
+import { createTheme } from '@mui/material/styles';
 
-export default makeStyles((theme) => ({
+const theme = createTheme();
+
+export default makeStyles(() => ({
   mainContainer: {
     display: 'flex',
     alignItems: 'center',

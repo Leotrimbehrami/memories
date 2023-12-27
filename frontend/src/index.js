@@ -4,9 +4,15 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import { thunk } from "redux-thunk";
 
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import reducers from "./reducers";
 import App from "./App";
+
+const theme = createTheme();
+
+
+
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 
@@ -14,7 +20,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+    <ThemeProvider theme={theme}>  {/* Hier wird das Theme bereitgestellt */}
+        <App />
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>
 );

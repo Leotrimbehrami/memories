@@ -8,6 +8,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import reducers from "./reducers";
 import App from "./App";
+import './index.css'
 
 const theme = createTheme();
 
